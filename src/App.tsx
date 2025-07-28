@@ -19,6 +19,7 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import PrivateRoute from "./components/routes/PrivateRoute";
+import ProductManagement from "./pages/Dashboard/ProductManagement/ProductManagement";
 
 export default function App() {
   return (
@@ -28,6 +29,11 @@ export default function App() {
         {/* Dashboard Layout */}
         <Route element={<PrivateRoute element={<AppLayout />} />}>
           <Route index path="/" element={<Home />} />
+
+          {/* Management Page */}
+          <Route path="/products" element={<ProductManagement />} />
+          <Route path="/categories" element={<Home />} />
+          <Route path="/orders" element={<Home />} />
 
           {/* Others Page */}
           <Route path="/profile" element={<UserProfiles />} />
